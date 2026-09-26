@@ -1,0 +1,18 @@
+# Runtime (Python >= 3.10)
+numpy>=2.0,<2.3
+# SciPy 1.14.x: the 1.15 macOS wheels failed to load on recent macOS releases (dyld error in
+# scipy.sparse.linalg._propack); 1.14.1 is the newest release verified here that still supports Python 3.10.
+scipy==1.14.1
+matplotlib>=3.9,<3.11
+pandas>=2.2,<2.4
+
+# Notebooks
+jupyterlab>=4.2
+ipykernel>=6.29
+nbconvert>=7.16
+
+# Quality: tests and static typing
+pytest>=8.0
+mypy>=1.10
+scipy-stubs~=1.14.1
+pandas-stubs>=2.2

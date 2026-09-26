@@ -1,0 +1,20 @@
+[project]
+name = "advent-2026-oop-miniprojects"
+version = "1.0.0"
+description = "OOP with Python, Assignment 1 (Advent 2026): five applied mini-projects in a Ugandan context."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+files = ["src", "tests"]
+
+[[tool.mypy.overrides]]
+module = ["matplotlib.*", "cycler"]
+ignore_missing_imports = true
