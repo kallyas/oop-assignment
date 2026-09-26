@@ -10,7 +10,6 @@ testpaths = ["tests"]
 addopts = "-q"
 
 [tool.mypy]
-python_version = "3.10"
 strict = true
 warn_unreachable = true
 files = ["src", "tests"]
