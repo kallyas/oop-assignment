@@ -160,12 +160,3 @@ Code (Anthropic), an AI coding assistant, as follows:
 
 * **Tests.** The pytest suites in `tests/` were written with the assistant.
 * **README.** This README was written with the assistant.
-* **Brainstorming notes.** The assistant reorganised my pseudo-code into the brainstorming notes now in
-  `pseudo_code.md`.
-* **Implementation.** The assistant turned my pseudo-code into the typed modules under `src/` and built the five
-  notebooks.
-* **Written analysis and references.** The assistant drafted the interpretation cells, the Findings & Limitations
-  sections, the advisory note in Project 4, and the literature references.
-
-<!-- TODO (author): describe your own review here, e.g. which results you re-derived by hand, what you changed,
-     and which references you checked against the original sources. -->
