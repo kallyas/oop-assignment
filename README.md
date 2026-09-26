@@ -1,6 +1,6 @@
 # OOP with Python: Assignment 1 (Advent 2026)
 
-![tests](https://github.com/<github-username>/<repository-name>/actions/workflows/tests.yml/badge.svg)
+[![tests](https://github.com/kallyas/oop-assignment/actions/workflows/tests.yml/badge.svg)](https://github.com/kallyas/oop-assignment/actions/workflows/tests.yml)
 
 Five applied mini-projects in a Ugandan context, each modelled with classes, tested with pytest and analysed in a
 Jupyter notebook.
@@ -73,8 +73,7 @@ mypy            # strict mode over src/ and tests/
 ```
 
 **Continuous integration.** `.github/workflows/tests.yml` runs on every push and pull request. It runs `mypy` and
-`pytest` on Python 3.10, 3.11 and 3.12, then executes all five notebooks from a fresh kernel. After pushing, replace
-`<github-username>/<repository-name>` in the badge URL at the top of this file.
+`pytest` on Python 3.10, 3.11 and 3.12, then executes all five notebooks from a fresh kernel.
 
 ## Design notes
 
