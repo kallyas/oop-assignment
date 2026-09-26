@@ -160,3 +160,5 @@ Code (Anthropic), an AI coding assistant, as follows:
 
 * **Tests.** The pytest suites in `tests/` were written with the assistant.
 * **README.** This README was written with the assistant.
+* **GitHub Actions.** The CI workflow in `.github/workflows/` (tests, type checks and notebook execution) was set
+  up with the assistant.
