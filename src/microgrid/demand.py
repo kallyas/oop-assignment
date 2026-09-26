@@ -84,7 +84,7 @@ def write_demand_csv(schedule: DemandSchedule, path: Path) -> None:
     """Persist ``schedule`` as CSV with columns ``date, weekday, d1_kwh, d2_kwh``."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as fh:
-        writer = csv.writer(fh)
+        writer = csv.writer(fh, lineterminator="\n")
         writer.writerow(CSV_HEADER)
         for date, a, b in zip(schedule.dates, schedule.d1, schedule.d2):
             writer.writerow([date.isoformat(), date.strftime("%a"), f"{a:.1f}", f"{b:.1f}"])
