@@ -1,0 +1,55 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    name: pytest + mypy (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Type-check (mypy --strict)
+        run: mypy
+      - name: Run unit tests
+        run: pytest -v
+
+  notebooks:
+    name: Execute notebooks (Restart & Run All)
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    env:
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Execute every notebook from a fresh kernel
+        run: |
+          for nb in project*_*.ipynb; do
+            echo "::group::$nb"
+            jupyter nbconvert --to notebook --execute "$nb" --output-dir /tmp/executed \
+              --ExecutePreprocessor.timeout=600
+            echo "::endgroup::"
+          done
