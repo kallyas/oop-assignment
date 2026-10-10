@@ -1,5 +1,10 @@
 # OOP with Python: Assignment 1 (Advent 2026)
 
+- **Student:** Tumuhirwe Iden
+- **Student number:** S26M25/011
+- **Email:** B41459@students.ucu.ac.ug
+
+
 [![tests](https://github.com/kallyas/oop-assignment/actions/workflows/tests.yml/badge.svg)](https://github.com/kallyas/oop-assignment/actions/workflows/tests.yml)
 
 Five applied mini-projects in a Ugandan context, each modelled with classes, tested with pytest and analysed in a
